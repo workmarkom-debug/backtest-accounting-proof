@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Backtest Evidence Pack</title><style>body{max-width:1080px;margin:36px auto;padding:0 24px;font-family:system-ui,sans-serif;color:#162334;background:#f8fafc;line-height:1.55}h1{font-size:34px;letter-spacing:-1px}h2{margin-top:36px;font-size:22px}table{border-collapse:collapse;width:100%;font-size:14px;background:white}th,td{padding:12px;text-align:right;border-bottom:1px solid #dce4ec;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#162334;color:white}.table-scroll{overflow-x:auto;margin:24px 0}code,pre{font-family:ui-monospace,monospace;overflow-wrap:anywhere}pre{white-space:pre-wrap;background:#e8eef5;padding:18px}p{margin:10px 0}</style><main><h1>Backtest Evidence Pack</h1>
+<p>Dataset: <strong>SYNTHETIC - three small winning round trips</strong></p>
+<p>Data type: <strong>synthetic</strong>. Simulation only.</p>
+<p>UTC candle-open window: 2026-01-01T00:00:00+00:00 to 2026-01-01T06:00:00+00:00.</p>
+<p>Rows: 7; interval: 3600000 ms; duplicates/gaps: none.</p>
+<p>Rule: <code>supplied_signals</code>; parameters: <code>{}</code>.</p>
+<p>Hypothetical starting balance: 1,000.00 quote-currency units.</p>
+<div class="table-scroll"><table>
+<tr><th>Simulation</th><th>Return</th><th>Maximum drawdown</th><th>Fees paid</th><th>Fills</th><th>Closed round trips</th><th>Ending value</th></tr>
+<tr><td>strategy_gross</td><td>0.60%</td><td>0.00%</td><td>0.0000</td><td>6</td><td>3</td><td>1006.0120</td></tr>
+<tr><td>buy_hold_gross</td><td>0.20%</td><td>0.20%</td><td>0.0000</td><td>1</td><td>0</td><td>1002.0000</td></tr>
+<tr><td>strategy_base</td><td>-0.30%</td><td>0.35%</td><td>5.9910</td><td>6</td><td>3</td><td>996.9985</td></tr>
+<tr><td>buy_hold_base</td><td>0.05%</td><td>0.20%</td><td>0.9990</td><td>1</td><td>0</td><td>1000.4988</td></tr>
+<tr><td>strategy_stress</td><td>-1.49%</td><td>1.49%</td><td>11.9104</td><td>6</td><td>3</td><td>985.1060</td></tr>
+<tr><td>buy_hold_stress</td><td>-0.15%</td><td>0.35%</td><td>1.9960</td><td>1</td><td>0</td><td>998.5022</td></tr>
+</table></div>
+<p>Base return difference versus buy-and-hold: -0.35 percentage points.</p>
+<p>Stress return change versus base: -1.19 percentage points.</p>
+<h2>Execution contract</h2>
+<p>Base fee per fill: 0.1000%; adverse slippage per fill: 5 bps.</p>
+<p>Stress doubles the fee rate and triples slippage. Gross removes both.</p>
+<p>A close-time exposure request is filled at the NEXT candle open. The final signal has no later fill.</p>
+<p>Long-only, unlevered, one position. Entry spends exposure x available cash, including the buy fee.</p>
+<p>Positive requests do not resize an existing position; zero closes it on the next open.</p>
+<p>Buy-and-hold uses identical costs and first enters at the second candle open.</p>
+<p>Quantity step: 0.00000001; minimum notional: 0. These are simulation assumptions, not exchange rules.</p>
+<p>No practical drawdown stop (threshold 100%). Drawdowns are observed at candle closes; intrabar risk is not measured.</p>
+<p>A final open position is marked at the final close without a fabricated liquidation or exit fee.</p>
+<p>Base ending open quantity: 0.00000000; marked value: 0.0000.</p>
+<p>Funding, borrowing, spread beyond specified slippage, latency, market impact and tax are excluded.</p>
+<h2>Evidence and limits</h2>
+<p>Signal causality status: <code>unverified</code>.</p>
+<p>Buyer-supplied signals may contain future information; their generation was not audited.</p>
+<p>Input cadence and OHLC consistency are checked. Data authenticity, completeness outside the supplied window and licensing are not verified.</p>
+<p>No parameter search, train/test selection or untouched holdout is performed. This checks the submitted setup on one supplied window.</p>
+<p>A short window or few closed trades cannot establish a repeatable trading edge. Losing results are retained.</p>
+<p>This is a technical simulation report, not a trading recommendation, profit guarantee or live-execution certification.</p>
+<p>Synthetic demo prices are invented and must not be presented as historical market performance.</p>
+<h2>Reproduction</h2>
+<p>The ZIP includes the exact normalized specification, candle CSV, result JSON, fill/equity CSVs and executor source.</p>
+<p>With Python 3.10+ from the extracted directory:</p>
+<pre>
+python -m evidence_service report --candles candles.csv --spec spec.json --out reproduced
+
+</pre>
+<p>Input SHA-256: <code>5bc619f3af7467c7b7fc8f7e7b937d1d0ef7443d73cae5955a8afc169527e591</code>.</p>
+<p>Normalized spec SHA-256: <code>a42c592496691a7e17745ddef4f99216e9d4af058f54e5b75d4e942916027e10</code>.</p>
+<p>manifest.json hashes each delivery file except itself and the final ZIP. It records the exact executor source hashes.</p></main></html>

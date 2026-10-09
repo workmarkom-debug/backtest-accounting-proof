@@ -1,0 +1,1 @@
+{"data_kind":"synthetic","fee_rate":0.001,"initial_cash":1000.0,"interval_ms":3600000,"label":"SYNTHETIC - three small winning round trips","params":{},"slippage_bps":5.0,"strategy":"supplied_signals"}

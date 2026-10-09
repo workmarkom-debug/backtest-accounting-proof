@@ -1,0 +1,2 @@
+timestamp_ms,side,quantity,price,fee,notional
+1767229200000,buy,10.0,100.0,0.0,1000.0

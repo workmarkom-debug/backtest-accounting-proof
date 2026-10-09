@@ -1,0 +1,44 @@
+{
+  "classification": "original_synthetic_accounting_counterexample_not_market_performance",
+  "rows": 7,
+  "closed_round_trips": 3,
+  "gross": {
+    "closed_trades": 3,
+    "exposure": 0.42857142857142855,
+    "fees_paid": 0.0,
+    "final_equity": 1006.012008,
+    "final_exposure": 0.0,
+    "halted": false,
+    "max_drawdown": 0.0,
+    "total_return": 0.006012008,
+    "trade_count": 6,
+    "win_rate": 1.0
+  },
+  "base": {
+    "closed_trades": 3,
+    "exposure": 0.42857142857142855,
+    "fees_paid": 5.990994536009742,
+    "final_equity": 996.9985192157322,
+    "final_exposure": 0.0,
+    "halted": false,
+    "max_drawdown": 0.00349848753105914,
+    "total_return": -0.003001480784267742,
+    "trade_count": 6,
+    "win_rate": 0.0
+  },
+  "stress": {
+    "closed_trades": 3,
+    "exposure": 0.42857142857142855,
+    "fees_paid": 11.910425480966824,
+    "final_equity": 985.1060144144452,
+    "final_exposure": 0.0,
+    "halted": false,
+    "max_drawdown": 0.014893985585554824,
+    "total_return": -0.014893985585554824,
+    "trade_count": 6,
+    "win_rate": 0.0
+  },
+  "independent_formula_final_equity": 996.9985192151414,
+  "formula_tolerance_quote_units": 1e-05,
+  "zip_sha256": "4866dcb900bdb2d0665d8cdf5490a4ee6c91ccd6358ec43f78016b25f4e74911"
+}
